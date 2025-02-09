@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/currentGoal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Goal Weight: 70 kg"
+        android:textSize="18sp"
+        android:paddingBottom="8dp" />
+
+    <Button
+        android:id="@+id/addWeightButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Weight" />
+
+    <Button
+        android:id="@+id/smsPermissionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Request Text Notifications" />
+
+    <ListView
+        android:id="@+id/weightDataGrid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp" />
+</LinearLayout>
