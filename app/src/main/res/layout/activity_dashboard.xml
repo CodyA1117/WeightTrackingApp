@@ -4,29 +4,52 @@
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- Current weight goal -->
     <TextView
         android:id="@+id/currentGoal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Goal Weight: 70 kg"
+        android:text="@string/current_goal"
         android:textSize="18sp"
-        android:paddingBottom="8dp" />
+        android:paddingBottom="8dp"
+        android:gravity="center" />
 
-    <Button
-        android:id="@+id/addWeightButton"
+    <!-- Buttons for user actions -->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Weight" />
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
 
-    <Button
-        android:id="@+id/smsPermissionButton"
+        <Button
+            android:id="@+id/addWeightButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add_weight"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/setGoalButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/set_goal" />
+    </LinearLayout>
+
+    <!-- Placeholder for Chart Until Functionality is complete -->
+    <TextView
+        android:id="@+id/chartPlaceholder"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Request Text Notifications" />
+        android:layout_height="200dp"
+        android:background="#D3D3D3"
+        android:text="@string/chart_placeholder"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
 
+    <!-- Data grided out will become weights and dates -->
     <ListView
         android:id="@+id/weightDataGrid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="8dp" />
 </LinearLayout>

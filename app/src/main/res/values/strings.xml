@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">WeightTrackingApp</string>
+    <string name="app_name">Weight Tracker</string>
+    <string name="add_weight">Add Weight</string>
+    <string name="set_goal">Set Goal</string>
+    <string name="current_goal">Current Goal: 180 lbs</string>
+    <string name="chart_placeholder">Trend Chart Placeholder</string>
 </resources>
