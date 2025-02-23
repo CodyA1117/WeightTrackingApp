@@ -30,7 +30,7 @@ public class DashboardActivity extends AppCompatActivity {
         Button addWeightButton = findViewById(R.id.addWeightButton);
         weightDataGrid = findViewById(R.id.weightDataGrid);
 
-        // 🔹 Get the logged-in user ID
+        // Get the logged-in user ID
         SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
         userId = sharedPreferences.getInt("USER_ID", -1);
 
@@ -39,6 +39,7 @@ public class DashboardActivity extends AppCompatActivity {
             finish(); // Close activity if no user is logged in
             return;
         }
+
 
         addWeightButton.setOnClickListener(v -> {
             double weight = 175.0;  // Temporary test value
@@ -56,7 +57,7 @@ public class DashboardActivity extends AppCompatActivity {
     }
 
     private void loadWeightData() {
-        Cursor cursor = databaseHelper.getWeightData(userId);  // ✅ Pass userId
+        Cursor cursor = databaseHelper.getWeightData(userId);  // Pass userId
         ArrayList<String> weightList = new ArrayList<>();
 
         while (cursor.moveToNext()) {

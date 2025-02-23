@@ -87,5 +87,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.rawQuery("SELECT * FROM " + TABLE_WEIGHT + " WHERE " + COLUMN_USER_ID_FK + "=?", new String[]{String.valueOf(userId)});
     }
 
+    public int getUserId(String username) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT id FROM users WHERE username=?", new String[]{username});
+
+        if (cursor.moveToFirst()) {
+            int userId = cursor.getInt(0);
+            cursor.close();
+            return userId;
+        }
+
+        cursor.close();
+        return -1;  // Return -1 if no user is found
+    }
+
+
 
 }
