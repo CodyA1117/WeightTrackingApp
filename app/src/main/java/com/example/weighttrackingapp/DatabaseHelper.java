@@ -69,4 +69,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cursor.close();
         return exists;
     }
+
+    // insert weight data
+    public boolean addWeight(int userId, double weight, String date) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_USER_ID_FK, userId); // Associate with user
+        values.put(COLUMN_WEIGHT, weight);
+        values.put(COLUMN_DATE, date);
+        long result = db.insert(TABLE_WEIGHT, null, values);
+        return result != -1;
+    }
+
+    // Retrieve weight data
+    public Cursor getWeightData(int userId) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        return db.rawQuery("SELECT * FROM " + TABLE_WEIGHT + " WHERE " + COLUMN_USER_ID_FK + "=?", new String[]{String.valueOf(userId)});
+    }
+
+
 }
