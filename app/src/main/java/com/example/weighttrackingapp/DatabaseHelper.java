@@ -101,6 +101,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return -1;  // Return -1 if no user is found
     }
 
+    // Update weight entry
+    public boolean updateWeight(int weightId, double newWeight, String newDate) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_WEIGHT, newWeight);
+        values.put(COLUMN_DATE, newDate);
+
+        int rowsUpdated = db.update(TABLE_WEIGHT, values, COLUMN_WEIGHT_ID + "=?", new String[]{String.valueOf(weightId)});
+        return rowsUpdated > 0;
+    }
+
+    // Delete weight entry
+    public boolean deleteWeight(int weightId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int rowsDeleted = db.delete(TABLE_WEIGHT, COLUMN_WEIGHT_ID + "=?", new String[]{String.valueOf(weightId)});
+        return rowsDeleted > 0;
+    }
+
+
 
 
 }
