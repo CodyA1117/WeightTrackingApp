@@ -57,7 +57,7 @@ To fix this I implemented logic that stores the previous weight entry before ins
 Lastly it determines if the user is improving or getting closer to the goal, or moving further away from the goal.  Then based off of that it sends eaither positive
 or negative feedback. 
 
-**Demonstrating Knoledge**
+**Demonstrating Knowledge**
 Developing the Weight Tracking App required applying a variety of skills, from initial planning and user requirement 
 analysis to implementing full CRUD (Create, Read, Update, Delete) functionality and ensuring a seamless user experience 
 with notifications and data management. Two areas where I demonstrated strong technical competency were (1) designing and
